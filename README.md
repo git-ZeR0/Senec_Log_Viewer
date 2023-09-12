@@ -12,6 +12,7 @@ copy:
 - senec_log.php
 - senec_log.sh
 - all_logs.sh
+
 to your htdocs folder.
 
 Edit senec_log.sh and all_logs.sh to your settings.
