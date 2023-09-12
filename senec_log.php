@@ -160,7 +160,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 		<?php
 	if (isset($_SESSION['selectedYear']) || isset($_SESSION['selectedMonth']) || isset($_SESSION['selectedDay'])){
 		echo 'const year = '.$_SESSION['selectedYear'].';
-		const month = "'.$_SESSION['selectedMonth'].'"; // Monate in JavaScript sind nullbasiert, daher +1
+		const month = "'.$_SESSION['selectedMonth'].'";
 		const day = "'.$_SESSION['selectedDay'].'";';
 	}
 	else {
