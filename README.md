@@ -15,17 +15,23 @@ copy:
 
 to your htdocs folder.
 
+
 Edit senec_log.sh and all_logs.sh to your settings.
 - chmod +x senec_log.sh
 - chmod +x all_logs.sh
 
+
 Start all-log-downloader one time:
 - ./all_logs.sh start
+
 (it takes a while for to downloading all your logfiles)
+
 
 Start log-file Updater with:
 - ./senec_log.sh start
+
 (it runs in the background and updated the current logfile)
+
 
 open your browser http://your-domain-or-ip/senec_log.php
 - you can change the Date for a specific logfile
