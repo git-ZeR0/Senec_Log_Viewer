@@ -1,4 +1,4 @@
-# Senec_Log_Viewer
+# Senec Log Viewer
 downloading logfiles from Senec Machines and adapted "Senec Log Viewer" for lokal browsing logfiles
 ![Screenshot](Logfile_Viewer.png)
 
