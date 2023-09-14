@@ -28,6 +28,7 @@ $currentDay = date("j");
 $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $currentDay;
 ?>
 <!doctype html>
+<html lang="de">
 <head>
 	<meta charset=utf-8>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
