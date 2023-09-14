@@ -35,4 +35,4 @@ Start log-file Updater with:
 
 open your browser http://your-domain-or-ip/senec_log.php
 - you can change the Date for a specific logfile
-- or click View Current Log to view the current log file, which is continuously updated with senec_log.sh
+- or click "show current log" to view the current log file, which is continuously updated with senec_log.sh
