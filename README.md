@@ -4,7 +4,7 @@ downloading logfiles from Senec Machines and adapted "Senec Log Viewer" for loka
 
 requirements:
 - Senec Machine with https://
-- Lokal Webserver (Webserver must have access to the Senec Machine for log-downloading)
+- Local Webserver (Webserver must have access to the Senec Machine for log-downloading)
 
 copy:
 - images/*
