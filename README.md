@@ -40,7 +40,9 @@ open your browser http://your-domain-or-ip/senec_log.php
 
 ### Changelog
 - 2023-09-19 Added more colors
-> Warning is now orange
-> Error is now red
-> NPU shows now in yellow
-> NET shows now in cyan
+```
+Warning is now orange
+Error is now red
+NPU shows now in yellow
+NET shows now in cyan
+```
