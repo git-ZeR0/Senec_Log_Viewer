@@ -40,9 +40,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 		.toggleCheckboxes:hover { cursor: pointer; background-color:#bee9f7 } 
 		.sev-Debug		{background-color:gray;color:#a9a9a9}
 		.sev-Info		{background-color:#add8e6;color:#00f}
-		.source-NPU		{background-color:yellow;color:#000}
-		.source-NET		{background-color:cyan;color:#000}
-		.sev-Warning	{background-color:#ee9a00;color:#000}
+		.sev-Warning	{background-color:#00f;color:#fff}
 		.sev-Error		{background-color:#bb1500;color:#fff}
 		.sev-Panic		{background-color:#000;color:#fff}
 		.sev-None		{background-color:#d3d3d3;color:#000}
@@ -163,7 +161,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 		<?php
 	if (isset($_SESSION['selectedYear']) || isset($_SESSION['selectedMonth']) || isset($_SESSION['selectedDay'])){
 		echo 'const year = '.$_SESSION['selectedYear'].';
-		const month = "'.$_SESSION['selectedMonth'].'"; // Monate in JavaScript sind nullbasiert, daher +1
+		const month = "'.$_SESSION['selectedMonth'].'";
 		const day = "'.$_SESSION['selectedDay'].'";';
 	}
 	else {
@@ -174,7 +172,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 ?>
 
         const logname = "log/" + padZero(year, 4) + "/" + padZero(month, 2) + "/" + padZero(day, 2) + ".log";
-		//logname = "https://10.13.255.6/log/2023/09/10.log";
+		//logname = "https://192.168.0.150/log/2023/09/10.log";
 		var outputSPAN = document.getElementById("outputSPAN");
 		outputSPAN.innerHTML = logname;
         const reDateSevSrc =
@@ -317,7 +315,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
             }
 
             $('#logs').find('tbody').append(`
-                    <tr class="sev-` + tableSev + ` + source-` + tableSource + ` + msg-` + getClassByMessage(
+                    <tr class="sev-` + tableSev + ` msg-` + getClassByMessage(
                     tableMessage) + `">
                         <td style="white-space: nowrap">` + tableDate + ` ` +
                 tableTime + `</td>
