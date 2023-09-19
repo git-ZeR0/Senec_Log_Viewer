@@ -44,3 +44,5 @@ open your browser http://your-domain-or-ip/senec_log.php
   - Error is now red
   - NPU shows now in yellow
   - NET shows now in cyan
+
+
