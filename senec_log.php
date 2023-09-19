@@ -40,7 +40,9 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 		.toggleCheckboxes:hover { cursor: pointer; background-color:#bee9f7 } 
 		.sev-Debug		{background-color:gray;color:#a9a9a9}
 		.sev-Info		{background-color:#add8e6;color:#00f}
-		.sev-Warning	{background-color:#00f;color:#fff}
+		.source-NPU		{background-color:yellow;color:#000}
+		.source-NET		{background-color:cyan;color:#000}
+		.sev-Warning	{background-color:#ee9a00;color:#000}
 		.sev-Error		{background-color:#bb1500;color:#fff}
 		.sev-Panic		{background-color:#000;color:#fff}
 		.sev-None		{background-color:#d3d3d3;color:#000}
@@ -172,7 +174,6 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 ?>
 
         const logname = "log/" + padZero(year, 4) + "/" + padZero(month, 2) + "/" + padZero(day, 2) + ".log";
-		//logname = "https://192.168.0.150/log/2023/09/10.log";
 		var outputSPAN = document.getElementById("outputSPAN");
 		outputSPAN.innerHTML = logname;
         const reDateSevSrc =
@@ -315,7 +316,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
             }
 
             $('#logs').find('tbody').append(`
-                    <tr class="sev-` + tableSev + ` msg-` + getClassByMessage(
+                    <tr class="sev-` + tableSev + ` + source-` + tableSource + ` + msg-` + getClassByMessage(
                     tableMessage) + `">
                         <td style="white-space: nowrap">` + tableDate + ` ` +
                 tableTime + `</td>
@@ -499,4 +500,5 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
         window.addEventListener("load", logfileRequest);
 </script>
 </body>
+</html>
 </html>
