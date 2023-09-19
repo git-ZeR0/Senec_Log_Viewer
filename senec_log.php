@@ -501,4 +501,3 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 </script>
 </body>
 </html>
-</html>
