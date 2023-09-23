@@ -2,10 +2,11 @@
 downloading logfiles from Senec Machines and adapted "Senec Log Viewer" for lokal browsing logfiles
 ![Screenshot](Logfile_Viewer.png)
 
-requirements:
+### Requirements
 - Senec Machine with https://
 - Local Webserver (Webserver must have access to the Senec Machine for log-downloading)
 
+### how to use
 copy:
 - images/*
 - js/*
