@@ -51,7 +51,11 @@ open your browser http://your-domain-or-ip/senec_log.php
   - NPU shows now in yellow
   - NET shows now in cyan
 
-<br><br>
+<br /><br />
+## Disclaimer
+**All product and company names or logos are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them or any associated subsidiaries! This personal project is maintained in spare time and has no business goal.**
+
+<br /><br />
 ## :scroll: License ## 
  MIT License
 
