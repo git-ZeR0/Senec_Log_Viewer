@@ -4,6 +4,21 @@ remote_log_url_base="https://192.168.0.150/Log/" //hier die IP auf eure eigene d
 local_log_directory="log/" //hier das log-Verzeichnis angeben. Liegt die .sh in einem anderen Verezcihnis als htdocs, so muss dies angepasst werden
 log_output_file="/tmp/senec_log.log" //kann unverändert bleiben oder auch nach belieben angepasst werden
 
+# Timeout in Millisekunden
+timeout_ms=5000
+
+# Mindestwartezeit in Sekunden bis zum erneuten Abruf des Logfiles
+min_wait=30
+
+# Addiere Sekunden bei jedem fehgeschlagenen Abruf
+add_wait=10
+
+# Maximale Wartezeit in Sekunden (5 Minuten)
+max_wait=300
+
+# Aktuelle Wartezeit Start
+current_wait=$min_wait
+
 # Funktion zum Starten des Skripts
 start() {
     if [ -e "$log_output_file" ]; then
@@ -53,17 +68,28 @@ if [ "$1" == "run" ]; then
 		mkdir -p "$local_year_directory"
 		mkdir -p "$local_month_directory"
 
-		# Logdatei von der Remote-URL herunterladen
-		wget --no-check-certificate -O "$local_log_file" "$remote_log_url"
+        # Temporäre Datei für das Herunterladen erstellen
+        temp_log_file="/tmp/temp_log.log"
+    
+        # Logdatei von der Remote-URL herunterladen
+        wget --timeout=${timeout_ms} --no-check-certificate -O "$temp_log_file" "$remote_log_url"
+    
+        if [ $? -eq 0 ]; then
+            # Erfolgreich heruntergeladen, kopiere temp Logfile nach local_log_file
+            mv "$temp_log_file" "$local_log_file"
+            echo "Logdatei aktualisiert: $local_log_file"
+			current_wait=$min_wait  # Zurücksetzen auf Mindestwartezeit
+        else
+            echo "Fehler beim Herunterladen der Logdatei. Exit-Code: $?"
+            rm -f "$temp_log_file"  # Lösche temp Logfile
+			current_wait=$((current_wait + add_wait))  # Wartezeit erhöhen
+            if [ $current_wait -gt $max_wait ]; then
+                current_wait=$max_wait  # Begrenzen auf maximale Wartezeit
+            fi
+        fi
 
-		if [ $? -eq 0 ]; then
-			echo "Logdatei aktualisiert: $local_log_file"
-		else
-			echo "Fehler beim Herunterladen der Logdatei. Exit-Code: $?"
-		fi
-
-		# Kurze Pause, bevor erneuter Versuch
-		sleep 5  # Hier können Sie das Intervall anpassen, wie oft die Logdatei überprüft wird
+		# Wartezeit vor erneutem Abruf
+		sleep $current_wait
 	done
 	
 else
