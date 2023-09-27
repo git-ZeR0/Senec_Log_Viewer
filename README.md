@@ -25,7 +25,7 @@ Edit senec_log.sh and all_logs.sh to your settings.
 Start all-log-downloader one time:
 - ./all_logs.sh
 
-(it takes a while for to downloading all your logfiles)
+(it takes a while for downloading all your logfiles to htdocs/log)
 
 
 Start log-file Updater with:
