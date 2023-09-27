@@ -38,7 +38,7 @@ open your browser http://your-domain-or-ip/senec_log.php
 - you can change the Date for a specific logfile
 - or click "show current log" to view the current log file, which is continuously updated with senec_log.sh
 
-
+<br /><br />
 ### Changelog
 - 2023-09-27
   - Added timeout for wget
