@@ -40,6 +40,11 @@ open your browser http://your-domain-or-ip/senec_log.php
 
 
 ### Changelog
+- 2023-09-27
+  - Added timeout for wget
+  - Added more option for waittime
+
+
 - 2023-09-19 Added more colors
   - Warning is now orange
   - Error is now red
