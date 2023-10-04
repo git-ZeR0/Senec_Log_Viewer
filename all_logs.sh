@@ -10,5 +10,5 @@ for ((i = 0; i < days; i++)); do
   log_folder="log/$(date -d "$i days ago" '+%Y/%m')"
   mkdir -p "$log_folder"
   log_path="$log_folder/$(date -d "$i days ago" '+%d').log"
-  curl -o "$log_path" -k -O "https://$senecip/Log/$(date -d "$i days ago" '+%Y/%m/%d').log"
+  curl -o "$log_path" -k -O "https://$senecip//log/$(date -d "$i days ago" '+%Y/%m/%d').log"
 done
