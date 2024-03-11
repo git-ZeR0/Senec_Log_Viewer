@@ -1,7 +1,7 @@
 #!/bin/bash
 
 remote_log_url_base="https://192.168.0.150//log/" //hier die IP auf eure eigene der Senec anpassen
-local_log_directory="log/" //hier das log-Verzeichnis angeben. Liegt die .sh in einem anderen Verezcihnis als htdocs, so muss dies angepasst werden
+local_log_directory="log/" //hier das log-Verzeichnis angeben. Liegt die .sh in einem anderen Verzeichnis als htdocs, so muss dies angepasst werden
 log_output_file="/tmp/senec_log.log" //kann unverändert bleiben oder auch nach belieben angepasst werden
 
 # Timeout in Millisekunden
