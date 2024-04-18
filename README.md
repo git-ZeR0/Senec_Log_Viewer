@@ -40,6 +40,9 @@ open your browser http://your-domain-or-ip/senec_log.php
 
 <br /><br />
 ### Changelog
+- 2024-04-18
+  - Added color #b540d5 for External Control
+
 - 2023-09-27
   - Added timeout for wget
   - Added more option for waittime
