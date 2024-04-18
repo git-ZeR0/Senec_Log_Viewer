@@ -42,6 +42,7 @@ $selectedDay = isset($_SESSION['selectedDay']) ? $_SESSION['selectedDay'] : $cur
 		.sev-Info		{background-color:#add8e6;color:#00f}
 		.source-NPU		{background-color:yellow;color:#000}
 		.source-NET		{background-color:cyan;color:#000}
+		.source-External	{background-color:#b540d5;color:#FFF}
 		.sev-Warning	{background-color:#ee9a00;color:#000}
 		.sev-Error		{background-color:#bb1500;color:#fff}
 		.sev-Panic		{background-color:#000;color:#fff}
